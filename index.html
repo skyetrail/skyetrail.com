@@ -1,76 +1,910 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Skyetrail</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<meta name="description" content="Skyetrail is a modern data and AI consultancy based in Oakland, CA." />
-	<meta name="keywords" content="AI, data strategy, technology consulting, Skyetrail" />
-	<meta name="author" content="Skyetrail" />
-	<meta property="og:title" content="Skyetrail" />
-	<meta property="og:description" content="Modern data & AI strategy, grounded in clarity and insight." />
-	<meta property="og:image" content="https://www.skyetrail.com/assets/images/banner.jpg" />
-	<meta property="og:url" content="https://www.skyetrail.com" />
-  </head>
-  <body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skyetrail — AI engineering for energy and utilities</title>
+  <meta name="description" content="AI engineering for energy and utilities. Technical due diligence for the investors backing them." />
+  <meta name="author" content="Skyetrail" />
+  <meta property="og:title" content="Skyetrail" />
+  <meta property="og:description" content="AI engineering for energy and utilities. Technical due diligence for the investors backing them." />
+  <meta property="og:url" content="https://www.skyetrail.com" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Serif:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070b16;
+      --panel: rgba(255, 255, 255, 0.022);
+      --fg: #f4f1ea;
+      --fg2: rgba(244, 241, 234, 0.74);
+      --muted: rgba(244, 241, 234, 0.46);
+      --rule: rgba(244, 241, 234, 0.10);
 
-    <!-- Wrapper -->
-    <div id="wrapper" class="fade-in">
+      --aurora1: #5ef2c4;
+      --aurora2: #3aa6ff;
+      --aurora3: #b07aff;
+      --highlight: #3aa6ff;
+      --glow1: rgba(176, 122, 255, 0.22);
+      --glow2: rgba(58, 166, 255, 0.11);
 
-      <!-- Header -->
-      <header id="header">
-		  <h1>Skyetrail</h1>
-      </header>
+      --grad: linear-gradient(110deg, #5ef2c4 0%, #3aa6ff 50%, #b07aff 100%);
 
-      <!-- Nav -->
-      <nav id="nav">
-        <ul class="links">
-          <li class="active"><a href="index.html">Home</a></li>
-        </ul>
-      </nav>
+      --font-display: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+      --font-body: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+      --font-accent: "IBM Plex Serif", Georgia, serif;
 
-      <!-- Main -->
-      <div id="main">
-        <!-- Intro Text or Future Content Placeholder -->
-        <section class="post">
-          <header class="major">
-            <p>Skyetrail helps organizations navigate the evolving landscape of data and AI.</p>
-          </header>
-          <p>More details coming soon.</p>
-        </section>
-      </div>
+      --pad-x: clamp(28px, 5vw, 64px);
+      --section-y: clamp(72px, 11vh, 132px);
+      --max-w: 1180px;
+    }
 
-      <!-- Footer -->
-      <footer id="footer">
-        <section class="contact">
-          <section class="alt">
-            <h3>Location</h3>
-            <p>Oakland, CA</p>
-          </section>
-          <section>
-            <h3>Email</h3>
-            <p><a href="mailto:info@skyetrail.com">info@skyetrail.com</a></p>
-          </section>
-        </section>
-      </footer>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; }
+    ::selection { background: rgba(58, 166, 255, 0.32); }
 
-      <!-- Copyright -->
-      <div id="copyright">
-        <ul><li>&copy; Skyetrail</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-      </div>
+    /* ── shared gradient accent (italic IBM Plex Serif) ──── */
+    .accent {
+      background-image: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .grad-text {
+      background-image: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
+    /* ── nav ─────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 20px var(--pad-x);
+      background: rgba(7, 11, 22, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .brand svg { display: block; }
+    .nav-links {
+      display: flex;
+      gap: clamp(18px, 2.4vw, 34px);
+      align-items: center;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .nav-links a {
+      color: var(--fg2);
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--fg); }
+    .cta {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--bg);
+      background: var(--highlight);
+      padding: 10px 18px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 0 20px rgba(58, 166, 255, 0.27);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 28px rgba(58, 166, 255, 0.40);
+    }
+
+    /* ── hero ────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 86vh;
+      padding: clamp(48px, 9vh, 110px) var(--pad-x) 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      isolation: isolate;
+    }
+    .hero .bg-wash {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(120% 80% at 50% 118%, var(--glow1) 0%, var(--glow2) 30%, transparent 62%);
+      pointer-events: none;
+    }
+    .hero .stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(1px 1px at 23% 22%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 64% 30%, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 81% 16%, rgba(255,255,255,0.45), transparent),
+        radial-gradient(1px 1px at 11% 40%, rgba(255,255,255,0.30), transparent),
+        radial-gradient(1px 1px at 47% 12%, rgba(255,255,255,0.40), transparent),
+        radial-gradient(1px 1px at 90% 36%, rgba(255,255,255,0.30), transparent),
+        radial-gradient(1px 1px at 35% 26%, rgba(255,255,255,0.35), transparent);
+    }
+    .band {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 300px;
+      opacity: 0.92;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    .band canvas { display: block; width: 100%; height: 100%; }
+    .hero .band-1 { top: 60%; }
+    .hero .band-2 { top: 70%; }
+    .hero .band-3 { top: 82%; }
+
+    .hero-inner {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--fg2);
+      margin-bottom: 34px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--highlight);
+      box-shadow: 0 0 10px var(--highlight);
+      display: inline-block;
+    }
+    .eyebrow-muted { color: var(--muted); }
+
+    h1.hero-h1 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(40px, 5.6vw, 84px);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: var(--fg);
+      margin: 0;
+      max-width: 1080px;
+      text-wrap: balance;
+    }
+    .h1-clause2 {
+      display: block;
+      margin-top: 0.18em;
+      color: var(--fg2);
+    }
+
+    .hero-cta-row {
+      margin-top: 52px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .cta-big {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--bg);
+      background: var(--fg);
+      padding: 16px 28px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .cta-big:hover { transform: translateY(-1px); background: #fff; }
+    .cta-big .arrow { font-size: 18px; line-height: 1; }
+    .cta-hint {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* ── section primitives ──────────────────────────────── */
+    .section {
+      padding: var(--section-y) var(--pad-x);
+      position: relative;
+    }
+    .section.panel {
+      background: var(--panel);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      overflow: hidden;
+    }
+    .section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .section-label {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--highlight);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .section-label .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--highlight);
+      box-shadow: 0 0 10px var(--highlight);
+      display: inline-block;
+    }
+    h2.section-h2 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(30px, 3.8vw, 52px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin: 0 0 24px;
+      max-width: 820px;
+      text-wrap: balance;
+    }
+    .section-intro {
+      font-size: clamp(17px, 1.4vw, 20px);
+      line-height: 1.5;
+      color: var(--fg2);
+      margin: 0;
+      max-width: 720px;
+      text-wrap: pretty;
+    }
+
+    /* ── §2 POV anchor ───────────────────────────────────── */
+    .pov {
+      padding: clamp(64px, 10vh, 120px) var(--pad-x);
+    }
+    .pov .pov-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(80% 120% at 50% 50%, var(--glow2) 0%, transparent 60%);
+    }
+    .pov-quote {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(28px, 3.6vw, 50px);
+      line-height: 1.22;
+      letter-spacing: -0.02em;
+      color: var(--fg2);
+      text-wrap: balance;
+    }
+    .pov-quote .punch { color: var(--fg); }
+
+    /* ── §3 Engineering pillar ───────────────────────────── */
+    .engineering-head {
+      max-width: var(--max-w);
+      margin: 0 auto 56px;
+    }
+    .engineering-grid {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 56px;
+    }
+    .engineering-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 18px;
+      padding: 28px 0;
+      border-top: 1px solid var(--rule);
+      align-items: start;
+    }
+    .engineering-num {
+      font-family: var(--font-accent);
+      font-style: normal;
+      font-size: 15px;
+      font-weight: 600;
+      background-image: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .engineering-text {
+      font-size: clamp(16px, 1.25vw, 18px);
+      line-height: 1.5;
+      color: var(--fg2);
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .engineering-text strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    /* ── §4 Diligence pillar ─────────────────────────────── */
+    .diligence-grid {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 88px);
+      align-items: start;
+    }
+    .q-head {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .q-row {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 14px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+    }
+    .q-row:last-child { border-bottom: none; }
+    .q-mark {
+      width: 9px;
+      height: 9px;
+      border: 1.5px solid var(--highlight);
+      transform: rotate(45deg);
+      display: inline-block;
+      margin-top: 6px;
+    }
+    .q-text {
+      font-size: clamp(16px, 1.25vw, 18px);
+      line-height: 1.45;
+      color: var(--fg);
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    /* ── §5 Why Skyetrail ────────────────────────────────── */
+    .why-grid {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: clamp(40px, 6vw, 96px);
+      align-items: start;
+    }
+    h2.why-h2 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(32px, 4.4vw, 60px);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      margin: 0 0 28px;
+      text-wrap: balance;
+    }
+    .why-mark {
+      width: 160px;
+      height: 44px;
+      opacity: 0.85;
+      mix-blend-mode: screen;
+    }
+    .why-mark canvas { display: block; width: 100%; height: 100%; }
+    .why-body p {
+      font-size: clamp(17px, 1.45vw, 21px);
+      line-height: 1.55;
+      color: var(--fg2);
+      margin: 0 0 26px;
+      text-wrap: pretty;
+    }
+    .why-body p:last-child { margin-bottom: 0; }
+    .why-body .name { color: var(--fg); font-weight: 600; }
+
+    /* ── §6 Contact (aurora bookend) ─────────────────────── */
+    .contact {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(96px, 16vh, 180px) var(--pad-x);
+      border-top: 1px solid var(--rule);
+      text-align: center;
+    }
+    .contact .wash {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(110% 90% at 50% -10%, var(--glow1) 0%, var(--glow2) 28%, transparent 60%);
+    }
+    .contact .band { opacity: 0.85; }
+    .contact .band-1 { top: 40%; }
+    .contact .band-2 { top: 30%; }
+    .contact .band-3 { top: 20%; }
+    .contact-inner {
+      position: relative;
+      z-index: 3;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .contact-label {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--highlight);
+      margin-bottom: 20px;
+    }
+    h2.contact-h2 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(40px, 6vw, 88px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      color: var(--fg);
+      margin: 0 0 40px;
+      text-wrap: balance;
+    }
+    .contact-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+    .contact-actions .cta-big { font-size: 16.5px; padding: 17px 30px; }
+    .contact-actions .email {
+      font-size: 16.5px;
+      color: var(--fg2);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .contact-actions .email:hover { color: var(--fg); }
+
+    /* ── footer ──────────────────────────────────────────── */
+    .foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 28px var(--pad-x);
+      border-top: 1px solid var(--rule);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .foot .brand-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--fg2);
+    }
+    .foot .brand-line svg { display: block; }
+
+    /* ── responsive ──────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .engineering-grid { grid-template-columns: 1fr; gap: 0; }
+      .diligence-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .nav-links a:not(.cta) { display: none; }
+      .hero { min-height: 78vh; padding-bottom: 96px; }
+    }
+    @media (max-width: 560px) {
+      .nav { padding-top: 14px; padding-bottom: 14px; }
+      .eyebrow { font-size: 13px; margin-bottom: 26px; }
+      .hero-cta-row { gap: 14px; }
+      .cta-hint { font-size: 14px; }
+      .contact-actions { gap: 16px; }
+      .foot { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── reusable signal-mark svg (gradient bars) ───────── -->
+  <!-- five gradient bars; height-scaled at usage sites via width/height attrs -->
+
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg width="25" height="22" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="3"    y="20" width="4" height="10" rx="2" fill="#5ef2c4"/>
+        <rect x="9.5"  y="12" width="4" height="18" rx="2" fill="#49c9d6"/>
+        <rect x="16"   y="6"  width="4" height="24" rx="2" fill="#3aa6ff"/>
+        <rect x="22.5" y="14" width="4" height="16" rx="2" fill="#7e8cf2"/>
+        <rect x="29"   y="21" width="4" height="9"  rx="2" fill="#b07aff"/>
+      </svg>
+      <span>Skyetrail</span>
+    </a>
+    <div class="nav-links">
+      <a href="#engineering">For organizations</a>
+      <a href="#diligence">For investors</a>
+      <a href="#why">Why us</a>
+      <a class="cta" href="#contact">Get in touch</a>
     </div>
+  </nav>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+  <!-- ── §1 Hero ────────────────────────────────────────── -->
+  <header id="top" class="hero">
+    <div class="bg-wash"></div>
+    <div class="stars"></div>
+    <div class="band band-1"><canvas data-phasor data-color="#5ef2c4" data-count="5" data-amp="0.18" data-spread="0.10" data-stroke="1.5" data-glow="28"></canvas></div>
+    <div class="band band-2"><canvas data-phasor data-color="#3aa6ff" data-count="5" data-amp="0.16" data-spread="0.12" data-stroke="1.6" data-glow="32"></canvas></div>
+    <div class="band band-3"><canvas data-phasor data-color="#b07aff" data-count="5" data-amp="0.13" data-spread="0.10" data-stroke="1.8" data-glow="36"></canvas></div>
 
-  </body>
+    <div class="hero-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        <span>Energy &amp; utilities</span>
+        <span class="eyebrow-muted">·</span>
+        <span class="eyebrow-muted">Oakland</span>
+      </div>
+
+      <h1 class="hero-h1">
+        <span class="accent">AI engineering</span> for energy and utilities.
+        <span class="h1-clause2">
+          <span class="accent">Technical due diligence</span> for the investors backing them.
+        </span>
+      </h1>
+
+      <div class="hero-cta-row">
+        <a class="cta-big" href="#contact">
+          Get in touch <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <span class="cta-hint">Every engagement starts with a conversation.</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── §2 POV anchor ──────────────────────────────────── -->
+  <section class="section panel pov" aria-label="Point of view">
+    <div class="pov-glow"></div>
+    <p class="pov-quote">
+      Most utility AI projects fail because they're built like
+      software-company AI projects. <span class="punch">We don't build them that way.</span>
+    </p>
+  </section>
+
+  <!-- ── §3 Engineering pillar ──────────────────────────── -->
+  <section id="engineering" class="section">
+    <div class="engineering-head">
+      <div class="section-label">
+        <span class="dot" aria-hidden="true"></span>
+        For energy &amp; utility organizations
+      </div>
+      <h2 class="section-h2">AI engineering for utility operations</h2>
+      <p class="section-intro">
+        Most energy and utility companies are trying to use AI in their
+        operations but aren't sure where it actually pays off, how to build it
+        in their real environment, or how to ship it safely.
+      </p>
+    </div>
+    <div class="engineering-grid">
+      <div class="engineering-item">
+        <span class="engineering-num">01</span>
+        <p class="engineering-text">
+          <strong>Figuring out where AI is actually worth doing</strong> in your operation, and where it isn't.
+        </p>
+      </div>
+      <div class="engineering-item">
+        <span class="engineering-num">02</span>
+        <p class="engineering-text">
+          <strong>Building the systems themselves.</strong> Agents, model integrations, wired into your real data.
+        </p>
+      </div>
+      <div class="engineering-item">
+        <span class="engineering-num">03</span>
+        <p class="engineering-text">
+          <strong>Shipping in a regulated environment.</strong> The engineering discipline around AI work: evals, guardrails, spec-driven development, continuous delivery.
+        </p>
+      </div>
+      <div class="engineering-item">
+        <span class="engineering-num">04</span>
+        <p class="engineering-text">
+          <strong>Measurably accelerating your own engineers</strong> with AI in their daily work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── §4 Diligence pillar ────────────────────────────── -->
+  <section id="diligence" class="section panel">
+    <div class="diligence-grid">
+      <div>
+        <div class="section-label">
+          <span class="dot" aria-hidden="true"></span>
+          For investors &amp; acquirers
+        </div>
+        <h2 class="section-h2">Independent technical diligence for energy deals</h2>
+        <p class="section-intro">
+          When a VC, PE firm, or acquirer is about to write a check on an
+          energy or grid-tech company, you need someone independent to look at
+          the technology and tell you what's real. We analyze the risk and
+          deliver a memo for the investment committee.
+        </p>
+      </div>
+      <div>
+        <div class="q-head">What we answer</div>
+        <div class="q-row"><span class="q-mark" aria-hidden="true"></span><p class="q-text">Does the architecture actually scale, or only the demo?</p></div>
+        <div class="q-row"><span class="q-mark" aria-hidden="true"></span><p class="q-text">Do the claims hold up under real load and real data?</p></div>
+        <div class="q-row"><span class="q-mark" aria-hidden="true"></span><p class="q-text">What would it cost to take the prototype to production?</p></div>
+        <div class="q-row"><span class="q-mark" aria-hidden="true"></span><p class="q-text">Where's the technical risk, and where's the key-person risk?</p></div>
+        <div class="q-row"><span class="q-mark" aria-hidden="true"></span><p class="q-text">How mature are the target's AI practices?</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── §5 Why Skyetrail ───────────────────────────────── -->
+  <section id="why" class="section">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">
+          <span class="dot" aria-hidden="true"></span>
+          Why Skyetrail
+        </div>
+        <h2 class="why-h2">The rare combination this work needs.</h2>
+        <div class="why-mark">
+          <canvas data-phasor data-color="#3aa6ff" data-count="5" data-amp="0.16" data-spread="0.12" data-stroke="1.1" data-glow="0" data-auto-count="1" data-alpha-floor="0.42"></canvas>
+        </div>
+      </div>
+      <div class="why-body">
+        <p>
+          There aren't many people deep in both energy/utilities and modern AI
+          engineering at the same time. <span class="name">Pete Baker</span>
+          spent two decades inside grid analytics, twice as VP of product, and
+          is now in hands-on agentic AI development. His PhD is in agentic AI
+          for grid infrastructure.
+        </p>
+        <p>
+          Modern AI tools have widened the range one experienced person can
+          cover, enough to work the full arc from deciding what to build,
+          through building it, to running it in production. What we build with
+          your team stays with your team.
+        </p>
+        <p>
+          Safe AI isn't built on vibes. The essential controls that have long
+          been a mainstay of regulated industries provide the foundation for
+          safe, effective AI. Skyetrail's expertise in AI engineering and
+          regulated-industry discipline makes production AI work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── §6 Contact (aurora bookend) ────────────────────── -->
+  <section id="contact" class="contact">
+    <div class="wash"></div>
+    <div class="band band-1"><canvas data-phasor data-color="#5ef2c4" data-count="5" data-amp="0.16" data-spread="0.10" data-stroke="1.5" data-glow="26"></canvas></div>
+    <div class="band band-2"><canvas data-phasor data-color="#3aa6ff" data-count="5" data-amp="0.15" data-spread="0.12" data-stroke="1.6" data-glow="30"></canvas></div>
+    <div class="band band-3"><canvas data-phasor data-color="#b07aff" data-count="5" data-amp="0.12" data-spread="0.10" data-stroke="1.8" data-glow="34"></canvas></div>
+
+    <div class="contact-inner">
+      <div class="contact-label">Contact</div>
+      <h2 class="contact-h2">
+        Every engagement starts with <span class="accent">a conversation.</span>
+      </h2>
+      <div class="contact-actions">
+        <a class="cta-big" href="mailto:info@skyetrail.com">
+          Get in touch <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="email" href="mailto:info@skyetrail.com">info@skyetrail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── footer ─────────────────────────────────────────── -->
+  <footer class="foot">
+    <span class="brand-line">
+      <svg width="17" height="15" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="3"    y="20" width="4" height="10" rx="2" fill="#5ef2c4"/>
+        <rect x="9.5"  y="12" width="4" height="18" rx="2" fill="#49c9d6"/>
+        <rect x="16"   y="6"  width="4" height="24" rx="2" fill="#3aa6ff"/>
+        <rect x="22.5" y="14" width="4" height="16" rx="2" fill="#7e8cf2"/>
+        <rect x="29"   y="21" width="4" height="9"  rx="2" fill="#b07aff"/>
+      </svg>
+      Skyetrail · Oakland
+    </span>
+    <span>info@skyetrail.com</span>
+    <span>© 2026 Skyetrail</span>
+  </footer>
+
+  <script>
+    // PhasorStack — stacked phase-shifted waveforms rendered to <canvas>.
+    // Ported from the design bundle's phasor-stack.jsx so output matches
+    // the React version without React. Supports aspect-normalized
+    // frequency (humps stay the same shape at any container aspect),
+    // autoCount (drop lines when the canvas shrinks, keeping a subset of
+    // the original stack), alphaFloor (lift back-line opacity for small
+    // marks), and a per-line color gradient via data-colors="hex,hex,…".
+    (function () {
+      const ALPHAS  = [0.18, 0.26, 0.38, 0.55, 0.78, 1.00];
+      const STROKES = [0.85, 0.90, 1.00, 1.10, 1.25, 1.40];
+      const FREQS_BASE = [2.0, 4.8, 10.2];
+      const REF_ASPECT = 1112 / 300;
+
+      function pickIndices(total, want) {
+        if (want >= total) return Array.from({ length: total }, (_, k) => k);
+        if (want <= 1) return [0];
+        const out = [];
+        for (let k = 0; k < want; k++) {
+          out.push(Math.round((k * (total - 1)) / (want - 1)));
+        }
+        return Array.from(new Set(out));
+      }
+
+      function hexLerp(arr, frac) {
+        if (!arr || arr.length === 0) return '#ffffff';
+        if (arr.length === 1) return arr[0];
+        const f = Math.max(0, Math.min(1, frac)) * (arr.length - 1);
+        const i = Math.floor(f);
+        const t = f - i;
+        const a = arr[i];
+        const b = arr[Math.min(i + 1, arr.length - 1)];
+        const pa = [parseInt(a.slice(1, 3), 16), parseInt(a.slice(3, 5), 16), parseInt(a.slice(5, 7), 16)];
+        const pb = [parseInt(b.slice(1, 3), 16), parseInt(b.slice(3, 5), 16), parseInt(b.slice(5, 7), 16)];
+        const c = pa.map((v, k) => Math.round(v + (pb[k] - v) * t));
+        return `rgb(${c[0]},${c[1]},${c[2]})`;
+      }
+
+      function paint(canvas) {
+        const dpr  = window.devicePixelRatio || 1;
+        const cssW = canvas.clientWidth;
+        const cssH = canvas.clientHeight;
+        if (!cssW || !cssH) return;
+        canvas.width  = cssW * dpr;
+        canvas.height = cssH * dpr;
+
+        const ctx = canvas.getContext('2d');
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, cssW, cssH);
+
+        const ds          = canvas.dataset;
+        const color       = ds.color  || '#1f3347';
+        const colors      = ds.colors ? ds.colors.split(',').map(s => s.trim()) : null;
+        const count       = parseInt(ds.count  || '6', 10);
+        const ampFrac     = parseFloat(ds.amp    || '0.20');
+        const spread      = parseFloat(ds.spread || '0.16');
+        const strokeScale = parseFloat(ds.stroke || '1');
+        const glow        = parseFloat(ds.glow   || '0');
+        const glowFrac    = ds.glowFrac   ? parseFloat(ds.glowFrac)   : null;
+        const autoCount   = ds.autoCount === '1' || ds.autoCount === 'true';
+        const alphaFloorD = ds.alphaFloor ? parseFloat(ds.alphaFloor) : null;
+
+        const w = cssW;
+        const h = cssH;
+        const amp = h * ampFrac;
+
+        let activeCount = count;
+        let activeFloor = alphaFloorD;
+        if (autoCount) {
+          let ac, af;
+          if (h <= 16)      { ac = 2; af = 0.70; }
+          else if (h <= 24) { ac = 3; af = 0.55; }
+          else if (h <= 48) { ac = 4; af = 0.42; }
+          else              { ac = count; af = alphaFloorD; }
+          activeCount = Math.min(ac, count);
+          activeFloor = af;
+        }
+
+        const fscale = (w / h) / REF_ASPECT;
+        const freqs = FREQS_BASE.map(f => f * fscale);
+        const indices = pickIndices(count, activeCount);
+
+        for (let n = 0; n < indices.length; n++) {
+          const i        = indices[n];
+          const t        = count > 1 ? i / (count - 1) : 0;
+          const phase    = 0.6 + t * Math.PI * 0.9;
+          const baseY    = h * 0.5 - t * spread * h;
+          const fromBack = count - 1 - i;
+
+          let alpha;
+          if (activeFloor == null) {
+            alpha = ALPHAS[fromBack] ?? 0.10;
+          } else {
+            const depth = count > 1 ? fromBack / (count - 1) : 1;
+            alpha = activeFloor + (1 - activeFloor) * Math.pow(depth, 1.25);
+          }
+          const sw = (STROKES[fromBack] ?? 0.85) * strokeScale;
+
+          const lineColor = colors ? hexLerp(colors, t) : color;
+          const glowPx = glowFrac != null ? glowFrac * h : glow;
+          if (glowPx > 0) {
+            ctx.shadowColor = lineColor;
+            ctx.shadowBlur  = glowPx * (0.6 + t * 0.8);
+          } else {
+            ctx.shadowBlur = 0;
+          }
+
+          ctx.strokeStyle  = lineColor;
+          ctx.lineWidth    = sw;
+          ctx.lineCap      = 'round';
+          ctx.lineJoin     = 'round';
+          ctx.globalAlpha  = alpha;
+          ctx.beginPath();
+          for (let x = 0; x <= w; x += 2) {
+            const tt = x / w;
+            const y = baseY
+              - amp        * Math.sin(tt * freqs[0] * Math.PI * 2 + phase)
+              - amp * 0.48 * Math.sin(tt * freqs[1] * Math.PI * 2 + phase * 1.3 + 0.6)
+              - amp * 0.22 * Math.sin(tt * freqs[2] * Math.PI * 2 + phase * 0.7 + 1.2);
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur  = 0;
+      }
+
+      function paintAll() {
+        document.querySelectorAll('canvas[data-phasor]').forEach(paint);
+      }
+
+      function init() {
+        paintAll();
+        let queued = false;
+        const onResize = () => {
+          if (queued) return;
+          queued = true;
+          requestAnimationFrame(() => { queued = false; paintAll(); });
+        };
+        window.addEventListener('resize', onResize);
+        if ('ResizeObserver' in window) {
+          const ro = new ResizeObserver(onResize);
+          document.querySelectorAll('canvas[data-phasor]').forEach(c => ro.observe(c));
+        }
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(paintAll).catch(() => {});
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
 </html>
