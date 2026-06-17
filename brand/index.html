@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skyetrail — Brand</title>
+  <meta name="description" content="Skyetrail brand assets: logo, color, type, and the Aurora motif — with downloadable files." />
+  <meta name="author" content="Skyetrail" />
+  <meta property="og:title" content="Skyetrail — Brand" />
+  <meta property="og:description" content="Logo, color, type, and the Aurora motif, with downloadable files." />
+  <meta property="og:url" content="https://www.skyetrail.com/brand" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070b16;
+      --panel: rgba(255, 255, 255, 0.022);
+      --panel-solid: #0d1426;
+      --fg: #f4f1ea;
+      --fg2: rgba(244, 241, 234, 0.74);
+      --muted: rgba(244, 241, 234, 0.46);
+      --rule: rgba(244, 241, 234, 0.10);
+
+      --green: #5ef2c4;
+      --blue: #3aa6ff;
+      --violet: #b07aff;
+      --highlight: var(--blue);
+      --grad: linear-gradient(110deg, #5ef2c4 0%, #3aa6ff 50%, #b07aff 100%);
+      --glow-blue: 0 0 20px rgba(58, 166, 255, 0.44);
+
+      --sans: "IBM Plex Sans", "Helvetica Neue", system-ui, sans-serif;
+      --serif: "IBM Plex Serif", Georgia, serif;
+
+      --pad-x: clamp(28px, 5vw, 64px);
+      --section-y: clamp(56px, 8vh, 100px);
+      --max-w: 1100px;
+      --radius-pill: 999px;
+      --radius-tile: 8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; }
+    ::selection { background: rgba(58, 166, 255, 0.32); }
+
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
+
+    /* ── nav ─────────────────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 18px var(--pad-x);
+      background: rgba(7, 11, 22, 0.8);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand .wm { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--fg); }
+    .brand .tag {
+      font-size: 13px; color: var(--muted); padding-left: 11px; margin-left: 4px;
+      border-left: 1px solid var(--rule);
+    }
+    .nav a.back { font-size: 14px; color: var(--fg2); text-decoration: none; white-space: nowrap; transition: color .15s; }
+    .nav a.back:hover { color: var(--fg); }
+
+    /* ── section scaffold ────────────────────────────────── */
+    section { padding: var(--section-y) 0; border-top: 1px solid var(--rule); }
+    .kicker { font-size: 13px; font-weight: 500; color: var(--blue); margin: 0 0 10px; }
+    h2.sec {
+      font-family: var(--sans); font-weight: 500;
+      font-size: clamp(26px, 3.2vw, 40px); line-height: 1.05;
+      letter-spacing: -0.03em; margin: 0 0 10px;
+    }
+    .secsub { font-size: 15.5px; color: var(--muted); margin: 0 0 36px; max-width: 640px; line-height: 1.55; }
+    .cap { font-size: 12px; letter-spacing: 0.02em; color: var(--muted); margin-bottom: 12px; }
+
+    /* ── masthead ────────────────────────────────────────── */
+    .mast { position: relative; overflow: hidden; border-top: none; padding-top: clamp(56px, 10vh, 110px); }
+    .mast .bands { position: absolute; inset: 0; pointer-events: none; }
+    .mast .band { position: absolute; left: 0; right: 0; height: 260px; opacity: 0.6; mix-blend-mode: screen; }
+    .mast .band canvas { display: block; width: 100%; height: 100%; }
+    .mast .b1 { top: 38%; } .mast .b2 { top: 52%; } .mast .b3 { top: 66%; }
+    .mast .inner { position: relative; z-index: 2; }
+    .mast h1 {
+      font-family: var(--sans); font-weight: 500;
+      font-size: clamp(40px, 6vw, 76px); line-height: 1.0;
+      letter-spacing: -0.04em; margin: 0;
+    }
+    .mast h1 .accent {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      background-image: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .mast p.tagline {
+      font-size: clamp(16px, 1.4vw, 19px); line-height: 1.5; color: var(--fg2);
+      max-width: 660px; margin: 22px 0 0;
+    }
+
+    /* ── logo blocks ─────────────────────────────────────── */
+    .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .stage {
+      border: 1px solid var(--rule); border-radius: 12px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 180px; padding: 32px;
+    }
+    .stage.on-dark { background: var(--bg); }
+    .stage.on-light { background: var(--fg); }
+    .stage.on-panel { background: var(--panel-solid); }
+    .lockup { display: inline-flex; align-items: center; gap: 14px; }
+    .lockup .wm { font-size: 30px; font-weight: 600; letter-spacing: -0.012em; }
+    .lockup.light .wm { color: var(--fg); }
+    .lockup.dark .wm { color: #0b1120; }
+    .stage svg { display: block; }
+
+    .sizes { display: flex; align-items: flex-end; gap: 26px; }
+    .size-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .size-item span { font-size: 11px; color: var(--muted); }
+    .tile {
+      width: 44px; height: 44px; border-radius: 9px; background: #0b1120;
+      display: flex; align-items: center; justify-content: center; padding: 8px;
+    }
+
+    /* clear space + min size + rules */
+    .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+    .note {
+      background: var(--panel); border: 1px solid var(--rule); border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .note h4 { font-size: 14px; font-weight: 600; margin: 0 0 12px; }
+    .note ul { margin: 0; padding: 0; list-style: none; }
+    .note li {
+      position: relative; padding: 8px 0 8px 22px; font-size: 14.5px; line-height: 1.5;
+      color: var(--fg2); border-top: 1px solid var(--rule);
+    }
+    .note li:first-child { border-top: none; }
+    .note li::before {
+      content: ""; position: absolute; left: 0; top: 15px;
+      width: 12px; height: 1px; background: var(--blue); box-shadow: 0 0 8px var(--blue);
+    }
+    .note.donts li::before { background: #ff7a8a; box-shadow: none; transform: rotate(45deg); width: 7px; height: 7px; top: 12px; border-radius: 1px; }
+
+    /* clear-space diagram */
+    .clearspace {
+      position: relative; display: inline-flex; align-items: center; gap: 14px;
+      padding: 28px; border: 1px dashed var(--rule); border-radius: 10px;
+    }
+    .clearspace .wm { font-size: 30px; font-weight: 600; letter-spacing: -0.012em; color: var(--fg); }
+
+    /* ── color ───────────────────────────────────────────── */
+    .swatches { display: flex; gap: 14px; flex-wrap: wrap; }
+    .chip { width: 132px; cursor: pointer; }
+    .chip .box { height: 66px; border-radius: 8px; border: 1px solid rgba(244,241,234,0.12); position: relative; }
+    .chip .nm { font-size: 13px; font-weight: 500; margin-top: 10px; }
+    .chip .hx { font-size: 11px; color: var(--muted); margin-top: 2px; font-variant-numeric: tabular-nums; }
+    .chip .copied { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 600; color: var(--bg); background: rgba(244,241,234,0.92); border-radius: 8px;
+      opacity: 0; transition: opacity .12s; }
+    .chip.is-copied .copied { opacity: 1; }
+    .gradbar-wrap { flex: 1; min-width: 260px; }
+    .gradbar { height: 66px; border-radius: 8px; background: var(--grad); }
+
+    /* ── type ────────────────────────────────────────────── */
+    .specrow { padding: 22px 0; border-top: 1px solid var(--rule); }
+    .specrow:first-child { border-top: none; }
+    .spec { font-size: 12px; color: var(--muted); letter-spacing: 0.02em; margin-bottom: 12px; }
+    .t-display { font-family: var(--sans); font-weight: 500; font-size: clamp(36px, 5vw, 70px); line-height: 1.02; letter-spacing: -0.04em; margin: 0; }
+    .t-display .accent { font-family: var(--serif); font-style: italic; font-weight: 400; background-image: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .t-quote { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(24px, 3.2vw, 38px); line-height: 1.22; letter-spacing: -0.02em; color: var(--fg2); margin: 0; max-width: 760px; }
+    .t-quote .punch { color: var(--fg); }
+    .t-lead { font-size: 20px; line-height: 1.45; color: var(--fg2); margin: 0; max-width: 640px; }
+    .t-body { font-size: 16px; line-height: 1.55; color: var(--fg2); margin: 0; max-width: 640px; }
+    .fam { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 30px; }
+    .fam .famcard { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 18px 20px; min-width: 220px; flex: 1; }
+    .fam .glyph { font-size: 40px; line-height: 1; margin-bottom: 12px; }
+    .fam .famnm { font-size: 14px; font-weight: 600; }
+    .fam .famuse { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.45; }
+
+    /* ── motif ───────────────────────────────────────────── */
+    .motif-stage { position: relative; height: 260px; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--bg); }
+    .motif-stage canvas { position: absolute; left: 0; right: 0; width: 100%; mix-blend-mode: screen; }
+    .motif-stage .cap2 { position: absolute; left: 22px; bottom: 16px; font-size: 12px; color: var(--fg2); z-index: 3; }
+
+    /* ── icons / downloads ───────────────────────────────── */
+    .icons { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-end; }
+    .icon-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .icon-item img { display: block; border-radius: 22%; }
+    .icon-item span { font-size: 11px; color: var(--muted); }
+
+    .dl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+    a.dl {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      text-decoration: none; background: var(--panel); border: 1px solid var(--rule);
+      border-radius: 10px; padding: 14px 16px; transition: border-color .15s, background .15s;
+    }
+    a.dl:hover { border-color: rgba(58,166,255,0.5); background: rgba(58,166,255,0.06); }
+    a.dl .dlnm { font-size: 14px; font-weight: 500; }
+    a.dl .dlmeta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    a.dl .arrow { font-size: 15px; color: var(--blue); flex: none; }
+
+    /* ── buttons ─────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+      font-size: 15px; font-weight: 500; border-radius: var(--radius-pill);
+      padding: 13px 22px; white-space: nowrap;
+    }
+    .btn-primary { background: var(--fg); color: var(--bg); }
+    .btn-accent { background: var(--blue); color: var(--bg); box-shadow: var(--glow-blue); }
+    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+
+    /* ── footer ──────────────────────────────────────────── */
+    footer.foot {
+      border-top: 1px solid var(--rule);
+      padding: 26px var(--pad-x);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      font-size: 13.5px; color: var(--muted);
+    }
+    footer.foot .bl { display: flex; align-items: center; gap: 10px; color: var(--fg2); }
+
+    @media (max-width: 720px) {
+      .logo-grid { grid-template-columns: 1fr; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .brand .tag { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── nav ─────────────────────────────────────────────── -->
+  <nav class="nav">
+    <a class="brand" href="/">
+      <span aria-hidden="true">
+        <svg width="25" height="22" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g-nav" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/>
+          </linearGradient></defs>
+          <rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-nav)"/>
+          <rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-nav)"/>
+          <rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-nav)"/>
+          <rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-nav)"/>
+          <rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-nav)"/>
+        </svg>
+      </span>
+      <span class="wm">Skyetrail</span>
+      <span class="tag">Brand</span>
+    </a>
+    <a class="back" href="/">← skyetrail.com</a>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- ── masthead ──────────────────────────────────────── -->
+    <section class="mast">
+      <div class="bands" aria-hidden="true">
+        <div class="band b1"><canvas data-phasor data-color="#5ef2c4" data-amp="0.18" data-spread="0.10" data-glow="18"></canvas></div>
+        <div class="band b2"><canvas data-phasor data-color="#3aa6ff" data-amp="0.16" data-spread="0.12" data-glow="20"></canvas></div>
+        <div class="band b3"><canvas data-phasor data-color="#b07aff" data-amp="0.13" data-spread="0.10" data-glow="22"></canvas></div>
+      </div>
+      <div class="inner">
+        <h1>The <span class="accent">Aurora</span> brand kit.</h1>
+        <p class="tagline">
+          The visual elements behind Skyetrail — logo, color, type, and the Aurora motif.
+          Everything here is downloadable below. Typeface is IBM Plex; the action color is
+          blue <span style="color:var(--blue)">#3AA6FF</span>.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-accent" href="#downloads">Download assets <span aria-hidden="true">→</span></a>
+          <a class="btn btn-primary" href="#logo">Logo guidelines <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── logo ──────────────────────────────────────────── -->
+    <section id="logo">
+      <p class="kicker">Logo</p>
+      <h2 class="sec">The signal-bars mark</h2>
+      <p class="secsub">
+        A five-bar spectrum cresting in the middle, carrying the green → blue → violet aurora
+        sweep. It pairs with a plain “Skyetrail” wordmark in IBM Plex Sans 600. The mark holds
+        on light and dark; on light backgrounds, use the dark wordmark.
+      </p>
+
+      <div class="logo-grid">
+        <div>
+          <div class="cap">Primary lockup — on dark</div>
+          <div class="stage on-dark">
+            <span class="lockup light">
+              <svg width="46" height="41" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Skyetrail mark">
+                <defs><linearGradient id="g-l1" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/>
+                </linearGradient></defs>
+                <rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-l1)"/>
+                <rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-l1)"/>
+                <rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-l1)"/>
+                <rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-l1)"/>
+                <rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-l1)"/>
+              </svg>
+              <span class="wm">Skyetrail</span>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div class="cap">Lockup — on light</div>
+          <div class="stage on-light">
+            <span class="lockup dark">
+              <svg width="46" height="41" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Skyetrail mark">
+                <defs><linearGradient id="g-l2" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/>
+                </linearGradient></defs>
+                <rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-l2)"/>
+                <rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-l2)"/>
+                <rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-l2)"/>
+                <rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-l2)"/>
+                <rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-l2)"/>
+              </svg>
+              <span class="wm">Skyetrail</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div>
+          <div class="cap" style="margin-top:18px">Mark — crisp down to 16px</div>
+          <div class="stage on-panel" style="min-height:140px; justify-content:flex-start; gap:26px;">
+            <div class="sizes">
+              <div class="size-item">
+                <svg width="18" height="16" viewBox="0 0 36 32" fill="none"><defs><linearGradient id="g-s1" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/></linearGradient></defs><rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-s1)"/><rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-s1)"/><rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-s1)"/><rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-s1)"/><rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-s1)"/></svg>
+                <span>16</span>
+              </div>
+              <div class="size-item">
+                <svg width="27" height="24" viewBox="0 0 36 32" fill="none"><defs><linearGradient id="g-s2" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/></linearGradient></defs><rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-s2)"/><rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-s2)"/><rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-s2)"/><rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-s2)"/><rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-s2)"/></svg>
+                <span>24</span>
+              </div>
+              <div class="size-item">
+                <svg width="45" height="40" viewBox="0 0 36 32" fill="none"><defs><linearGradient id="g-s3" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/></linearGradient></defs><rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-s3)"/><rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-s3)"/><rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-s3)"/><rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-s3)"/><rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-s3)"/></svg>
+                <span>40</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="cap" style="margin-top:18px">Clear space — ≈ the height of the mark on all sides</div>
+          <div class="stage on-panel" style="min-height:140px;">
+            <span class="clearspace">
+              <svg width="40" height="36" viewBox="0 0 36 32" fill="none" aria-hidden="true"><defs><linearGradient id="g-cs" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/></linearGradient></defs><rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-cs)"/><rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-cs)"/><rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-cs)"/><rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-cs)"/><rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-cs)"/></svg>
+              <span class="wm">Skyetrail</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="note">
+          <h4>Do</h4>
+          <ul>
+            <li>Keep the gradient green → blue → violet, left to right.</li>
+            <li>Use the light-wordmark lockup on dark; the dark-wordmark lockup on light.</li>
+            <li>Give the lockup clear space ≈ the height of the mark.</li>
+            <li>Use the favicon tile when the mark must sit below 16px.</li>
+          </ul>
+        </div>
+        <div class="note donts">
+          <h4>Don't</h4>
+          <ul>
+            <li>Recolor the mark or change the gradient direction.</li>
+            <li>Use the phasor stack as a small logo — it is large-use only.</li>
+            <li>Add a colored “ai” to the wordmark; it is plain “Skyetrail”.</li>
+            <li>Stretch, rotate, or add drop shadows to the lockup.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── color ─────────────────────────────────────────── -->
+    <section id="color">
+      <p class="kicker">Color</p>
+      <h2 class="sec">Aurora on midnight</h2>
+      <p class="secsub">
+        A near-black field with warm-white text. One action color — blue. The full
+        green → blue → violet gradient is reserved for the headline accent phrase and the logo
+        mark. Click any swatch to copy its value.
+      </p>
+
+      <div class="cap">Base</div>
+      <div class="swatches" style="margin-bottom:30px">
+        <div class="chip" data-hex="#070B16"><div class="box" style="background:#070b16"><span class="copied">copied</span></div><div class="nm">bg</div><div class="hx">#070B16</div></div>
+        <div class="chip" data-hex="rgba(255,255,255,0.022)"><div class="box" style="background:#0d1426"><span class="copied">copied</span></div><div class="nm">panel</div><div class="hx">+2% white</div></div>
+        <div class="chip" data-hex="#F4F1EA"><div class="box" style="background:#f4f1ea"><span class="copied">copied</span></div><div class="nm">fg</div><div class="hx">#F4F1EA</div></div>
+        <div class="chip" data-hex="rgba(244,241,234,0.74)"><div class="box" style="background:rgba(244,241,234,0.74)"><span class="copied">copied</span></div><div class="nm">fg-2</div><div class="hx">74%</div></div>
+        <div class="chip" data-hex="rgba(244,241,234,0.46)"><div class="box" style="background:rgba(244,241,234,0.46)"><span class="copied">copied</span></div><div class="nm">muted</div><div class="hx">46%</div></div>
+        <div class="chip" data-hex="rgba(244,241,234,0.10)"><div class="box" style="background:#0d1426;border-color:rgba(244,241,234,0.12)"><span class="copied">copied</span></div><div class="nm">rule</div><div class="hx">10% hairline</div></div>
+      </div>
+
+      <div class="cap">Aurora accents &amp; signature gradient</div>
+      <div class="swatches">
+        <div class="chip" data-hex="#5EF2C4"><div class="box" style="background:#5ef2c4"><span class="copied">copied</span></div><div class="nm">green</div><div class="hx">#5EF2C4</div></div>
+        <div class="chip" data-hex="#3AA6FF"><div class="box" style="background:#3aa6ff;box-shadow:0 0 20px rgba(58,166,255,0.44)"><span class="copied">copied</span></div><div class="nm">blue · action</div><div class="hx">#3AA6FF</div></div>
+        <div class="chip" data-hex="#B07AFF"><div class="box" style="background:#b07aff"><span class="copied">copied</span></div><div class="nm">violet</div><div class="hx">#B07AFF</div></div>
+        <div class="chip gradbar-wrap" data-hex="linear-gradient(110deg, #5EF2C4 0%, #3AA6FF 50%, #B07AFF 100%)">
+          <div class="box gradbar"><span class="copied">copied</span></div><div class="nm">aurora gradient</div><div class="hx">green → blue → violet · 110°</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── type ──────────────────────────────────────────── -->
+    <section id="type">
+      <p class="kicker">Typography</p>
+      <h2 class="sec">IBM Plex, sentence case</h2>
+      <p class="secsub">
+        IBM Plex Sans for display and body; IBM Plex Serif italic for the gradient accent phrase.
+        Tight tracking on display, fluid sizing, never below 16px.
+      </p>
+
+      <div class="fam">
+        <div class="famcard">
+          <div class="glyph" style="font-family:var(--sans);font-weight:500">Aa</div>
+          <div class="famnm">IBM Plex Sans</div>
+          <div class="famuse">Display &amp; body · weights 400 / 500 / 600</div>
+        </div>
+        <div class="famcard">
+          <div class="glyph" style="font-family:var(--serif);font-style:italic">Aa</div>
+          <div class="famnm">IBM Plex Serif <span style="color:var(--muted);font-weight:400">italic</span></div>
+          <div class="famuse">Accent phrase &amp; pull-quote only</div>
+        </div>
+      </div>
+
+      <div class="specrow">
+        <div class="spec">Display · Plex Sans 500 · clamp(40–84px) · −0.04em · gradient serif italic accent</div>
+        <p class="t-display"><span class="accent">AI engineering</span> for energy and utilities.</p>
+      </div>
+      <div class="specrow">
+        <div class="spec">Pull-quote · Plex Serif italic · clamp(28–50px)</div>
+        <p class="t-quote">Most utility AI projects fail because they're built like software-company AI projects. <span class="punch">We don't build them that way.</span></p>
+      </div>
+      <div class="specrow">
+        <div class="spec">Lead · 20 / 1.45 · fg-2</div>
+        <p class="t-lead">We build it with the companies living the change, and vet it for the investors funding it.</p>
+      </div>
+      <div class="specrow">
+        <div class="spec">Body · 16 / 1.55 · fg-2</div>
+        <p class="t-body">Deep in both power systems and modern AI, and built to work the full span of the problem — from shaping strategy to building the system that delivers it.</p>
+      </div>
+    </section>
+
+    <!-- ── motif ─────────────────────────────────────────── -->
+    <section id="motif">
+      <p class="kicker">Motif</p>
+      <h2 class="sec">The phasor stack</h2>
+      <p class="secsub">
+        The luminous hero and atmosphere graphic: glowing, phase-offset waveforms stacked in
+        green / blue / violet bands. Rendered live on canvas. Large-use only — it does not
+        survive below ~160px, and is never used as a small logo (that's the signal-bars mark).
+      </p>
+      <div class="motif-stage">
+        <canvas data-phasor data-color="#5ef2c4" data-amp="0.18" data-spread="0.10" data-glow="18" style="top:40px;height:200px"></canvas>
+        <canvas data-phasor data-color="#3aa6ff" data-amp="0.16" data-spread="0.12" data-glow="20" style="top:74px;height:200px"></canvas>
+        <canvas data-phasor data-color="#b07aff" data-amp="0.13" data-spread="0.10" data-glow="22" style="top:108px;height:200px"></canvas>
+        <span class="cap2">Glowing phase-offset waveforms · green / blue / violet bands</span>
+      </div>
+    </section>
+
+    <!-- ── app icons ─────────────────────────────────────── -->
+    <section id="icons">
+      <p class="kicker">App &amp; social icons</p>
+      <h2 class="sec">The mark on a midnight tile</h2>
+      <p class="secsub">
+        For app icons, avatars, and favicons, the mark sits on a rounded midnight tile
+        (<span style="color:var(--fg2)">#0B1120</span>). Provided as SVG and PNG.
+      </p>
+      <div class="icons">
+        <div class="icon-item"><img src="assets/icons/icon-192.png" width="72" height="72" alt="App icon" /><span>icon · 192</span></div>
+        <div class="icon-item"><img src="assets/skyetrail-mark-midnight-256.png" width="56" height="56" alt="Mark on midnight tile" /><span>tile · 256</span></div>
+        <div class="icon-item"><img src="assets/icons/avatar-512.png" width="48" height="48" alt="Avatar" /><span>avatar</span></div>
+        <div class="icon-item"><div class="tile" style="width:40px;height:40px;border-radius:9px">
+          <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="4.5" y="17" width="3.2" height="9" rx="1.6" fill="#5ef2c4"/><rect x="10" y="11" width="3.2" height="15" rx="1.6" fill="#49c9d6"/><rect x="15.4" y="7" width="3.2" height="19" rx="1.6" fill="#3aa6ff"/><rect x="20.8" y="12" width="3.2" height="14" rx="1.6" fill="#7e8cf2"/><rect x="26.2" y="18" width="3.2" height="8" rx="1.6" fill="#b07aff"/>
+          </svg></div><span>favicon</span></div>
+      </div>
+    </section>
+
+    <!-- ── downloads ─────────────────────────────────────── -->
+    <section id="downloads">
+      <p class="kicker">Downloads</p>
+      <h2 class="sec">Asset files</h2>
+      <p class="secsub">Vector (SVG) for digital and print; PNG for raster contexts. The phasor motif is not provided as a file — it renders live on canvas.</p>
+
+      <div class="cap">Mark</div>
+      <div class="dl-grid" style="margin-bottom:24px">
+        <a class="dl" href="assets/skyetrail-mark.svg" download><span><span class="dlnm">Mark</span><div class="dlmeta">SVG · transparent · vector</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/skyetrail-mark-midnight.svg" download><span><span class="dlnm">Mark on midnight</span><div class="dlmeta">SVG · rounded tile</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/skyetrail-mark-1024.png" download><span><span class="dlnm">Mark</span><div class="dlmeta">PNG · 1024 · transparent</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/skyetrail-mark-512.png" download><span><span class="dlnm">Mark</span><div class="dlmeta">PNG · 512 · transparent</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/skyetrail-mark-midnight-512.png" download><span><span class="dlnm">Mark on midnight</span><div class="dlmeta">PNG · 512</div></span><span class="arrow">↓</span></a>
+      </div>
+
+      <div class="cap">Lockup &amp; wordmark</div>
+      <div class="dl-grid" style="margin-bottom:24px">
+        <a class="dl" href="assets/skyetrail-logo.svg" download><span><span class="dlnm">Lockup — light</span><div class="dlmeta">SVG · for dark backgrounds</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/skyetrail-wordmark.svg" download><span><span class="dlnm">Wordmark</span><div class="dlmeta">SVG · dark text</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/skyetrail-logo-1024.png" download><span><span class="dlnm">Lockup — light</span><div class="dlmeta">PNG · 1024 · transparent</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/skyetrail-logo-dark-1024.png" download><span><span class="dlnm">Lockup — dark</span><div class="dlmeta">PNG · 1024 · for light bg</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/skyetrail-logo-midnight-1024.png" download><span><span class="dlnm">Lockup — midnight</span><div class="dlmeta">PNG · 1024 · solid bg</div></span><span class="arrow">↓</span></a>
+      </div>
+
+      <div class="cap">Icons</div>
+      <div class="dl-grid">
+        <a class="dl" href="assets/favicon.svg" download><span><span class="dlnm">Favicon</span><div class="dlmeta">SVG · midnight tile</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/icons/icon-512.png" download><span><span class="dlnm">App icon</span><div class="dlmeta">PNG · 512</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/icons/icon-180-apple-touch.png" download><span><span class="dlnm">Apple touch icon</span><div class="dlmeta">PNG · 180</div></span><span class="arrow">↓</span></a>
+        <a class="dl" href="assets/icons/avatar-1024.png" download><span><span class="dlnm">Avatar</span><div class="dlmeta">PNG · 1024 · social</div></span><span class="arrow">↓</span></a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ── footer ──────────────────────────────────────────── -->
+  <footer class="foot">
+    <span class="bl">
+      <svg width="17" height="15" viewBox="0 0 36 32" fill="none" aria-hidden="true">
+        <defs><linearGradient id="g-ft" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/></linearGradient></defs>
+        <rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-ft)"/><rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-ft)"/><rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-ft)"/><rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-ft)"/><rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-ft)"/>
+      </svg>
+      Skyetrail · Brand
+    </span>
+    <span>Questions: <a href="mailto:info@skyetrail.com" style="color:var(--fg2)">info@skyetrail.com</a></span>
+    <span>© 2026 Skyetrail</span>
+  </footer>
+
+  <script>
+    // ── phasor stack (hero/atmosphere motif) — canvas ─────
+    (function () {
+      const ALPHAS = [0.18, 0.26, 0.38, 0.55, 0.78];
+      const STROKES = [0.85, 0.9, 1.0, 1.1, 1.25];
+      const REF_ASPECT = 1112 / 300;
+      function paint(canvas) {
+        const dpr = window.devicePixelRatio || 1;
+        const w = canvas.clientWidth, h = canvas.clientHeight;
+        if (!w || !h) return;
+        canvas.width = w * dpr; canvas.height = h * dpr;
+        const ctx = canvas.getContext('2d');
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+        const color = canvas.dataset.color || '#3aa6ff';
+        const ampFrac = parseFloat(canvas.dataset.amp || '0.16');
+        const spread = parseFloat(canvas.dataset.spread || '0.12');
+        const glow = parseFloat(canvas.dataset.glow || '20');
+        const amp = h * ampFrac, fs = (w / h) / REF_ASPECT;
+        const freqs = [2.0 * fs, 4.8 * fs, 10.2 * fs];
+        for (let i = 0; i < 5; i++) {
+          const t = i / 4, phase = 0.6 + t * Math.PI * 0.9, baseY = h * 0.5 - t * spread * h, fb = 4 - i;
+          ctx.shadowColor = color; ctx.shadowBlur = glow * (0.6 + t * 0.8);
+          ctx.strokeStyle = color; ctx.lineWidth = (STROKES[fb] || 0.85) * 1.5;
+          ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.globalAlpha = ALPHAS[fb] || 0.1;
+          ctx.beginPath();
+          for (let x = 0; x <= w; x += 2) {
+            const tt = x / w;
+            const y = baseY
+              - amp * Math.sin(tt * freqs[0] * Math.PI * 2 + phase)
+              - amp * 0.48 * Math.sin(tt * freqs[1] * Math.PI * 2 + phase * 1.3 + 0.6)
+              - amp * 0.22 * Math.sin(tt * freqs[2] * Math.PI * 2 + phase * 0.7 + 1.2);
+            x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+        ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+      }
+      function paintAll() { document.querySelectorAll('canvas[data-phasor]').forEach(paint); }
+      function init() {
+        paintAll();
+        let q = false;
+        const onResize = () => { if (q) return; q = true; requestAnimationFrame(() => { q = false; paintAll(); }); };
+        window.addEventListener('resize', onResize);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(paintAll).catch(() => {});
+      }
+      document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+    })();
+
+    // ── click-to-copy color swatches ──────────────────────
+    document.querySelectorAll('.chip[data-hex]').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        const val = chip.getAttribute('data-hex');
+        const done = () => { chip.classList.add('is-copied'); setTimeout(() => chip.classList.remove('is-copied'), 850); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(val).then(done).catch(done);
+        } else { done(); }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" width="130" height="40" role="img" aria-label="Skyetrail">
+  <defs>
+    <linearGradient id="aurora" x1="0" y1="20" x2="36" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5EF2C4"></stop>
+      <stop offset="0.5" stop-color="#3AA6FF"></stop>
+      <stop offset="1" stop-color="#B07AFF"></stop>
+    </linearGradient>
+    
+  </defs>
+  <text x="0" y="29" class="wm" fill="#0B1120">Skyetrail</text>
+</svg>

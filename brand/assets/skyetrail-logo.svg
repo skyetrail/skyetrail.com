@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 40" width="178" height="40" role="img" aria-label="Skyetrail">
+  <defs>
+    <linearGradient id="aurora" x1="0" y1="20" x2="36" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5EF2C4"></stop>
+      <stop offset="0.5" stop-color="#3AA6FF"></stop>
+      <stop offset="1" stop-color="#B07AFF"></stop>
+    </linearGradient>
+    
+  </defs>
+  <g transform="translate(0 4)">
+    <rect x="3" y="20" width="4" height="10" rx="2" fill="url(#aurora)"></rect>
+    <rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#aurora)"></rect>
+    <rect x="16" y="6" width="4" height="24" rx="2" fill="url(#aurora)"></rect>
+    <rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#aurora)"></rect>
+    <rect x="29" y="21" width="4" height="9" rx="2" fill="url(#aurora)"></rect>
+  </g>
+  <text x="48" y="29" class="wm" fill="#F4F1EA">Skyetrail</text>
+</svg>
