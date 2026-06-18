@@ -64,7 +64,7 @@
       backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--rule);
     }
-    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand { display: flex; align-items: baseline; gap: 11px; text-decoration: none; }
     .brand .wm { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--fg); }
     .brand .tag {
       font-size: 13px; color: var(--muted); padding-left: 11px; margin-left: 4px;
@@ -115,7 +115,7 @@
     .stage.on-dark { background: var(--bg); }
     .stage.on-light { background: var(--fg); }
     .stage.on-panel { background: var(--panel-solid); }
-    .lockup { display: inline-flex; align-items: center; gap: 14px; }
+    .lockup { display: inline-flex; align-items: baseline; gap: 14px; }
     .lockup .wm { font-size: 30px; font-weight: 600; letter-spacing: -0.012em; }
     .lockup.light .wm { color: var(--fg); }
     .lockup.dark .wm { color: #0b1120; }
@@ -150,7 +150,7 @@
 
     /* clear-space diagram */
     .clearspace {
-      position: relative; display: inline-flex; align-items: center; gap: 14px;
+      position: relative; display: inline-flex; align-items: baseline; gap: 14px;
       padding: 28px; border: 1px dashed var(--rule); border-radius: 10px;
     }
     .clearspace .wm { font-size: 30px; font-weight: 600; letter-spacing: -0.012em; color: var(--fg); }
@@ -223,7 +223,7 @@
       display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
       font-size: 13.5px; color: var(--muted);
     }
-    footer.foot .bl { display: flex; align-items: center; gap: 10px; color: var(--fg2); }
+    footer.foot .bl { display: flex; align-items: baseline; gap: 10px; color: var(--fg2); }
 
     @media (max-width: 720px) {
       .logo-grid { grid-template-columns: 1fr; }
@@ -238,7 +238,7 @@
   <nav class="nav">
     <a class="brand" href="/">
       <span aria-hidden="true">
-        <svg width="25" height="22" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="25" height="21" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs><linearGradient id="g-nav" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse">
             <stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/>
           </linearGradient></defs>
@@ -293,7 +293,7 @@
           <div class="cap">Primary lockup — on dark</div>
           <div class="stage on-dark">
             <span class="lockup light">
-              <svg width="46" height="41" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Skyetrail mark">
+              <svg width="46" height="38" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Skyetrail mark">
                 <defs><linearGradient id="g-l1" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/>
                 </linearGradient></defs>
@@ -311,7 +311,7 @@
           <div class="cap">Lockup — on light</div>
           <div class="stage on-light">
             <span class="lockup dark">
-              <svg width="46" height="41" viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Skyetrail mark">
+              <svg width="46" height="38" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Skyetrail mark">
                 <defs><linearGradient id="g-l2" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/>
                 </linearGradient></defs>
@@ -351,7 +351,7 @@
           <div class="cap" style="margin-top:18px">Clear space — ≈ the height of the mark on all sides</div>
           <div class="stage on-panel" style="min-height:140px;">
             <span class="clearspace">
-              <svg width="40" height="36" viewBox="0 0 36 32" fill="none" aria-hidden="true"><defs><linearGradient id="g-cs" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/></linearGradient></defs><rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-cs)"/><rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-cs)"/><rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-cs)"/><rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-cs)"/><rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-cs)"/></svg>
+              <svg width="40" height="33" viewBox="0 0 36 30" fill="none" aria-hidden="true"><defs><linearGradient id="g-cs" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/></linearGradient></defs><rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-cs)"/><rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-cs)"/><rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-cs)"/><rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-cs)"/><rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-cs)"/></svg>
               <span class="wm">Skyetrail</span>
             </span>
           </div>
@@ -525,7 +525,7 @@
   <!-- ── footer ──────────────────────────────────────────── -->
   <footer class="foot">
     <span class="bl">
-      <svg width="17" height="15" viewBox="0 0 36 32" fill="none" aria-hidden="true">
+      <svg width="17" height="14" viewBox="0 0 36 30" fill="none" aria-hidden="true">
         <defs><linearGradient id="g-ft" x1="0" y1="16" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5EF2C4"/><stop offset=".5" stop-color="#3AA6FF"/><stop offset="1" stop-color="#B07AFF"/></linearGradient></defs>
         <rect x="3" y="20" width="4" height="10" rx="2" fill="url(#g-ft)"/><rect x="9.5" y="12" width="4" height="18" rx="2" fill="url(#g-ft)"/><rect x="16" y="6" width="4" height="24" rx="2" fill="url(#g-ft)"/><rect x="22.5" y="14" width="4" height="16" rx="2" fill="url(#g-ft)"/><rect x="29" y="21" width="4" height="9" rx="2" fill="url(#g-ft)"/>
       </svg>
